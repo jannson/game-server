@@ -166,7 +166,7 @@ function pre_install_clang(){
     fi
     echo ""
     ssmethod="chacha20"
-    echo "Please input Encryption method(chacha20, aes-256-cfb, bf-cfb, des-cfb, rc4)"
+    echo "Please input Encryption method(chacha20, chacha20-ietf, aes-256-cfb, bf-cfb, des-cfb, rc4)"
     read -p "(Default method: ${ssmethod}):" ssmethod
     if [ "${ssmethod}" = "" ]; then
         ssmethod="chacha20"
@@ -207,10 +207,12 @@ function pre_install_clang(){
     echo "============== Install packs =============="
     if [ "${OS}" == 'CentOS' ]; then
         #yum -y update
-        yum -y install nano net-tools openssl-devel wget iptables policycoreutils curl curl-devel psmisc
+        #yum -y install nano net-tools openssl-devel wget iptables policycoreutils curl curl-devel psmisc
+        echo "ignore dependency"
     else
-        apt-get update -y
-        apt-get install -y wget nano screen openssl libcurl4-openssl-dev iptables curl psmisc
+        #apt-get update -y
+        #apt-get install -y wget nano screen openssl libcurl4-openssl-dev iptables curl psmisc
+        echo "ignore dependency"
     fi
 
     [ ! -d ${str_game_dir} ] && mkdir -p ${str_game_dir}
