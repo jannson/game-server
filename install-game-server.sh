@@ -9,6 +9,8 @@ export PATH
 #===============================================================================================
 version="4.0"
 str_game_dir="/usr/local/game-server"
+DLPATH=http://koolshare.io/koolgame/latest/game-server
+DLPATH_386=http://koolshare.io/koolgame/latest/game-server-386
 
 function fun_clang.cn(){
     echo ""
@@ -237,14 +239,14 @@ EOF
     rm -f ${str_game_dir}/game-server
     if [ "${Is_64bit}" == 'y' ] ; then
         if [ ! -s ${str_game_dir}/game-server ]; then
-            if ! wget --no-check-certificate https://github.com/clangcn/game-server/raw/master/game-server -O ${str_game_dir}/game-server; then
+            if ! wget --no-check-certificate $DLPATH -O ${str_game_dir}/game-server; then
                 echo "Failed to download game-server file!"
                 exit 1
             fi
         fi
     else
          if [ ! -s ${str_game_dir}/game-server ]; then
-            if ! wget --no-check-certificate https://github.com/clangcn/game-server/raw/master/game-server-x86 -O ${str_game_dir}/game-server; then
+            if ! wget --no-check-certificate $DLPATH_386 -O ${str_game_dir}/game-server; then
                 echo "Failed to download game-server file!"
                 exit 1
             fi
