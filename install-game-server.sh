@@ -26,7 +26,7 @@ function fun_clang_cn(){
 # Check if user is root
 function rootness(){
     if [[ $EUID -ne 0 ]]; then
-        fun_clang.cn
+        fun_clang_cn
         echo "Error:This script must be run as root!" 1>&2
         exit 1
     fi
@@ -295,7 +295,7 @@ EOF
     ln -s ${str_game_dir}/game-server /usr/bin/
     /etc/init.d/game-server start
     echo ""
-    fun_clang.cn
+    fun_clang_cn
     #install successfully
     echo ""
     echo "Congratulations, Game-Server(XiaoBao) install completed!"
@@ -311,7 +311,7 @@ EOF
 }
 ############################### install function ##################################
 function install_game_server_clang(){
-    fun_clang.cn
+    fun_clang_cn
     checkos
     check_centosversion
     check_os_bit
@@ -332,7 +332,7 @@ function configure_game_server_clang(){
 }
 ############################### uninstall function ##################################
 function uninstall_game_server_clang(){
-    fun_clang.cn
+    fun_clang_cn
     if [ -s /etc/init.d/game-server ] || [ -s ${str_game_dir}/game-server ] ; then
         echo "============== Uninstall Game-Server(XiaoBao) =============="
         save_config="n"
@@ -376,7 +376,7 @@ function uninstall_game_server_clang(){
 }
 ############################### update function ##################################
 function update_game_server_clang(){
-    fun_clang.cn
+    fun_clang_cn
     if [ -s /etc/init.d/game-server ] || [ -s ${str_game_dir}/game-server ] ; then
         echo "============== Update Game-Server(XiaoBao) =============="
         checkos
@@ -451,7 +451,7 @@ update)
     update_game_server_clang 2>&1 | tee /root/game-server-update.log
     ;;
 *)
-    fun_clang.cn
+    fun_clang_cn
     echo "Arguments error! [${action} ]"
     echo "Usage: `basename $0` {install|uninstall|update|config}"
     ;;
