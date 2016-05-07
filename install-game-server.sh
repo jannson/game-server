@@ -12,7 +12,7 @@ str_game_dir="/usr/local/game-server"
 DLPATH=http://koolshare.io/koolgame/latest/game-server
 DLPATH_386=http://koolshare.io/koolgame/latest/game-server-386
 
-function fun_clang.cn(){
+function fun_clang_cn(){
     echo ""
     echo "#####################################################################"
     echo "# Install Game-Server(XiaoBao) for CentOS Debian or Ubuntu(32/64bit)"
