@@ -389,14 +389,14 @@ function update_game_server_clang(){
         rm -f /usr/bin/game-server ${str_game_dir}/game-server /root/game-server /root/game-server.log /etc/init.d/game-server
         if [ "${Is_64bit}" == 'y' ] ; then
             if [ ! -s /root/game-server ]; then
-                if ! wget --no-check-certificate https://github.com/clangcn/game-server/raw/master/game-server -O ${str_game_dir}/game-server; then
+                if ! wget --no-check-certificate $DLPATH -O ${str_game_dir}/game-server; then
                     echo "Failed to download game-server file!"
                     exit 1
                 fi
             fi
         else
              if [ ! -s /root/game-server ]; then
-                if ! wget --no-check-certificate https://github.com/clangcn/game-server/raw/master/game-server-x86 -O ${str_game_dir}/game-server; then
+                if ! wget --no-check-certificate $DLPATH_386 -O ${str_game_dir}/game-server; then
                     echo "Failed to download game-server file!"
                     exit 1
                 fi
