@@ -9,8 +9,8 @@ export PATH
 #===============================================================================================
 version="4.0"
 str_game_dir="/usr/local/game-server"
-DLPATH=http://koolshare.io/koolgame/latest/game-server
-DLPATH_386=http://koolshare.io/koolgame/latest/game-server-386
+DLPATH=http://http://firmware.koolshare.cn/koolgame/latest/game-server
+DLPATH_386=http://http://firmware.koolshare.cn/koolgame/latest/game-server-386
 
 function fun_clang_cn(){
     echo ""
